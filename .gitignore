@@ -1,0 +1,8 @@
+# Ignore local environment files
+.env
+.env.*
+!.env.example
+
+# Ignore dependencies and generated archives
+node_modules/
+*.zip

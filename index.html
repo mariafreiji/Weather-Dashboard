@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunnyRainy | Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="dashboard">
+    <header class="header">
+        <div class="sky-symbols" aria-hidden="true">
+            <span class="sun-symbol">☀</span>
+            <span class="cloud-symbol">☁</span>
+        </div>
+        <h1>Sunny<span class="rainy-word">Rainy</span></h1>
+    </header>
+
+        <form id="search-form" class="search-form">
+            <label for="city-input">City name</label>
+            <div class="search-row">
+                <input
+                    type="text"
+                    id="city-input"
+                    placeholder="For example: Beirut"
+                    required
+                >
+                <button type="submit" id="search-button">
+                    Search
+                </button>
+            </div>
+        </form>
+
+        <!-- loading and error messages -->
+        <p id="loading" role="status" hidden>Loading weather...</p>
+        <p id="error" role="alert" hidden></p>
+        <button type="button" id="retry-button" hidden>
+            Try again
+        </button>
+
+        <!-- weather values filled by javascript -->
+        <section id="weather-card" class="weather-card" hidden>
+            <div class="weather-heading">
+                <div>
+                    <p class="section-label">CURRENT WEATHER</p>
+                    <h2 id="city-name"></h2>
+                    <p id="country-name"></p>
+                </div>
+                <span id="weather-icon" aria-hidden="true"></span>
+            </div>
+
+            <p id="temperature" class="temperature"></p>
+            <p id="description"></p>
+
+            <div class="weather-details">
+                <div class="detail">
+                    <h3>Feels like</h3>
+                    <p id="feels-like"></p>
+                </div>
+                <div class="detail">
+                    <h3>Humidity</h3>
+                    <p id="humidity"></p>
+                </div>
+                <div class="detail">
+                    <h3>Wind speed</h3>
+                    <p id="wind-speed"></p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Weather data from Open-Meteo</p>
+        </footer>
+    </main>
+</body>
+</html>
